@@ -47,7 +47,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                scoreKeeper[0],
+                scoreKeeper[questionNumber],
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -72,7 +72,11 @@ class _QuizPageState extends State<QuizPage> {
                     fontSize: 20.0,
                   ),
                 ),
-                onPressed: () {}),
+                onPressed: () {
+                  setState(() {
+                    questionNumber++;
+                  });
+                }),
           ),
         ),
         Expanded(
@@ -89,7 +93,11 @@ class _QuizPageState extends State<QuizPage> {
                   color: Colors.white,
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  questionNumber++;
+                });
+              },
             ),
           ),
         ),
