@@ -25,11 +25,13 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
+  List<bool> answer = [false, true, true];
+
+  bool correctAnswer;
+
   List<String> scoreKeeper = [
     'You can lead a cow down stairs but not up stairs',
-
     'Approximately one quarter of human bones are in the feet.',
-
     'A slug\'s blood is green.',
   ];
 
@@ -75,6 +77,12 @@ class _QuizPageState extends State<QuizPage> {
                 onPressed: () {
                   setState(() {
                     questionNumber++;
+                    correctAnswer = answer[questionNumber];
+                    if (correctAnswer == true) {
+                      print('you got it right');
+                    } else {
+                      print('you got it wrong');
+                    }
                   });
                 }),
           ),
@@ -96,6 +104,11 @@ class _QuizPageState extends State<QuizPage> {
               onPressed: () {
                 setState(() {
                   questionNumber++;
+                  if (correctAnswer == true) {
+                    print('you got it right');
+                  } else {
+                    print('you got it wrong');
+                  }
                 });
               },
             ),
