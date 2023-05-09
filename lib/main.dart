@@ -26,9 +26,6 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
-  List<bool> answer = [false, true, true];
-
-  bool correctAnswer;
 
   List<Question> questionBank = [
     Question(s:'You can lead a cow down stairs but not up stairs', b: false),
@@ -79,7 +76,7 @@ class _QuizPageState extends State<QuizPage> {
                   setState(() {
                     questionNumber++;
                     questionBank[questionNumber].questionAnswer;
-                    if (correctAnswer == true) {
+                    if ((questionBank[questionNumber].questionAnswer) == true) {
                       print('you got it right');
                     } else {
                       print('you got it wrong');
@@ -105,7 +102,7 @@ class _QuizPageState extends State<QuizPage> {
               onPressed: () {
                 setState(() {
                   questionNumber++;
-                  if (correctAnswer == true) {
+                  if ((questionBank[questionNumber].questionAnswer)== true) {
                     print('you got it right');
                   } else {
                     print('you got it wrong');
