@@ -28,17 +28,20 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
+
+  bool correctAnswer;
+
   List<Icon> scoreKeeper = [];
 
   void checkAnswer(bool userPickedAnswer) {
     if (userPickedAnswer == correctAnswer) {
       scoreKeeper.add(Icon(Icons.check , color: Colors.green,));
     } else {
-      scoreKeeper.add(Icon(Icons. close , color: Colors.red,));
+      scoreKeeper.add(Icon(Icons.close, color: Colors.red,));
     }
   }
 
-  bool correctAnswer;
+
   int questionNumber = 0;
 
   @override
