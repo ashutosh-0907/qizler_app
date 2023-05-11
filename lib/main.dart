@@ -85,6 +85,7 @@ class _QuizPageState extends State<QuizPage> {
                   setState(() {
                     questionNumber++;
                     checkAnswer(true);
+                    quizBrain.nextQuestion();
                   });
                 }),
           ),
