@@ -38,9 +38,6 @@ class _QuizPageState extends State<QuizPage> {
     
 
 setState( (){
-
-  void isFinished()
-    {
       if(quizBrain.isFinished()==true);
        Alert(
           context: context,
@@ -49,7 +46,6 @@ setState( (){
         ).show();
         quizBrain.reset();
         scoreKeeper = [];
-      }
 
     if (userPickedAnswer == correctAnswer) {
       scoreKeeper.add(Icon(Icons.check , color: Colors.green,));
