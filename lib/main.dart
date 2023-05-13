@@ -38,7 +38,8 @@ class _QuizPageState extends State<QuizPage> {
     
 
 setState( (){
-      if(quizBrain.isFinished()==true);
+      if(quizBrain.isFinished()==true)
+      {
        Alert(
           context: context,
           title: 'Finished!',
@@ -46,16 +47,18 @@ setState( (){
         ).show();
         quizBrain.reset();
         scoreKeeper = [];
+      }
 
-    if (userPickedAnswer == correctAnswer) {
+    else {
+       if(userPickedAnswer == correctAnswer) {
       scoreKeeper.add(Icon(Icons.check , color: Colors.green,));
-    } 
+    }
     else {
       scoreKeeper.add(Icon(Icons.close, color: Colors.red,));
     }
   
   quizBrain.nextQuestion();
-
+  }
 });
 }
 
