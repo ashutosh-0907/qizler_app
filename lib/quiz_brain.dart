@@ -30,7 +30,7 @@ class QuizBrain{
     return _questionBank[_questionNumber].questionText;
   }
 
-  bool getAnswerText(){
+  bool getCorrectAnswer(){
     return _questionBank[_questionNumber].questionAnswer;
   }
 
